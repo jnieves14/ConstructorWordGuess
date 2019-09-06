@@ -1,7 +1,7 @@
-var Letter = require("./letter.js");
+var Letter = require("./letter");
 
 function Word() {
-    this.wordArray = [];
+    this.wordArray = [],
     this.makeWord = function(currentWord) {
         for (var i = 0; i < currentWord.length; i++) {
             if (currentWord[i] !== " ") {
