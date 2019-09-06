@@ -84,7 +84,7 @@ function guessPrompt(){
             currentWord.checkGuess(user.guess);
             currentWord.displayWord();
             // LET USER KNOW IF THEIR GUESS WAS CORRECT OR NOT
-            if(currentWord.checkGuess(user.guess)){
+            if (currentWord.checkGuess(user.guess)){
                 console.log("CORRECT!".green);
             }
             else{
