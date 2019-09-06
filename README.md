@@ -14,8 +14,7 @@ A commmand-line word guessing game using constructor functions
 * You can only enter one letter at a time. Keep in mind, the game will stop you from entering letters that have already been guessed.
 ![another-game-screenshot](./images/two.png)
 
-* You have 10 incorrect guesses before the game over! No worries, the game will let you know if a guess was incorrect.
-![another-game-screenshot](./images/two.png)
+* You have 10 incorrect guesses before the game's over! No worries, the game will let you know if a guess was incorrect.
 
 * Whether you guessed the word correctly or you've ran out of guesses, the game will ask if you'd like to play again
 * If you'd like to play again, the game will choose a new word 
