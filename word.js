@@ -1,25 +1,42 @@
 var Letter = require("./letter.js");
 
-function Word(answer) {
-    // array with letters as objects
-    this.array = [];
-
-    for (var i = 0; i < array.length; i++) {
-        var letter = new Letter(answer[i]);
-        this.array.push(letter);
-    }
-
-    this.log = function() {
-        answersLog = "";
-        for (var i = 0; i < this.array.length; i++) {
-            answersLog += this.array[i] + " ";
+function Word() {
+    this.wordArray = [];
+    this.makeWord = function(currentWord) {
+        for (var i = 0; i < currentWord.length; i++) {
+            if (currentWord[i] !== " ") {
+                var letterObject = new Letter(currentWord[i]);
+                this.wordArray.push(letterObject);
+            } else {
+                this.wordArray.push(" ");
+            }
         }
-        console.log(answerslog + "\n");
     }
-
-    this.userGuess = function(userGuess) {
-        for (var i = 0; i < this.array.length; i++) {
-            this.array[i].guess(userGuess);
+    this.displayWord = function() {
+        var word = [];
+        for (var i = 0; i < this.wordArray.length; i++) {
+            if (this.wordArray[i] !== " ") {
+                var letterString = this.wordArray[i].toString();
+                word.push(letterString);
+            } else {
+                word.push(" ");
+            }
+        }
+        console.log(word.join(" "));
+    }
+    this.checkGuess = function(input) {
+        var correctGuess = false;
+        for (var i = 0; i < this.wordArray.length; i++) {
+            if (this.wordArray[i] !== " ") {
+                if (this.wordArray[i].checkLetter(input)) {
+                    correctGuess = true;
+                }
+            }
+        }
+        if (correctGuess) {
+            return true;
+        } else {
+            return false;
         }
     }
 }
