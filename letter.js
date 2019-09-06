@@ -1,22 +1,19 @@
-function Letter(input) {
-    this.letter = input;
+function Letter(letter) {
+    this.letter = letter;
     this.guessed = false;
     this.toString = function() {
-        if (this.letter === " ") {
-            this.guessed = true;
-            return " ";
+        if (this.guessed === true) {
+            return this.letter.toUpperCase();
         } else {
-            if (this.guessed === false) {
-                return "_";
-            } else {
-                return this.letter;
-            }
+            return "_";
+            } 
         }
-    };
 
-    this.guess = function (guess) {
-        if (guess === this.letter) {
+    this.checkLetter = function(input) {
+        if (input.toLowerCase() === this.letter.toLowerCase()) {
             this.guessed = true;
+        } else {
+            return false;
         }
     }
 }
